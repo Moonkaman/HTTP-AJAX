@@ -7,6 +7,7 @@ import "./App.css";
 import Friends from "./components/Friends";
 import Home from "./components/Home";
 import Friend from "./components/Friend";
+import NavBar from "./components/NavBar";
 
 class App extends Component {
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar />
         <Route exact path="/" render={props => <Home {...props} />} />
         <Route
           exact

@@ -2,9 +2,11 @@ import React from "react";
 
 import FriendCard from "./FriendCard";
 
+import "./Friends.css";
+
 const Friends = props => {
   return (
-    <div>
+    <div className="friends-list-cont">
       <h1>My Friends</h1>
       <div className="friend-cont">
         {props.friends.map(friend => (
