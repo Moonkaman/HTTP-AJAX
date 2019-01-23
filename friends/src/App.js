@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import {Route} from 'react-router-dom';
 import axios from "axios";
 
 import "./App.css";
+
+import Friends from './components/Friends';
+import Home from './components/Home';
 
 class App extends Component {
   state = {
@@ -22,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>App</h1>
+        <Route exaxt path='/' render={props => <Home {...props} />} />
       </div>
     );
   }
