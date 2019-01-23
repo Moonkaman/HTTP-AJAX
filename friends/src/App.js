@@ -6,6 +6,7 @@ import "./App.css";
 
 import Friends from "./components/Friends";
 import Home from "./components/Home";
+import Friend from "./components/Friend";
 
 class App extends Component {
   state = {
@@ -28,8 +29,13 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" render={props => <Home {...props} />} />
         <Route
+          exact
           path="/friends"
           render={props => <Friends {...props} friends={this.state.friends} />}
+        />
+        <Route
+          path="/friends/:friendId"
+          render={props => <Friend {...props} friends={this.state.friends} />}
         />
       </div>
     );
