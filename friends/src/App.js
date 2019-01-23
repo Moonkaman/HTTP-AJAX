@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import {Route} from 'react-router-dom';
+import { Route } from "react-router-dom";
 import axios from "axios";
 
 import "./App.css";
 
-import Friends from './components/Friends';
-import Home from './components/Home';
+import Friends from "./components/Friends";
+import Home from "./components/Home";
 
 class App extends Component {
   state = {
@@ -26,7 +26,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exaxt path='/' render={props => <Home {...props} />} />
+        <Route exact path="/" render={props => <Home {...props} />} />
+        <Route
+          path="/friends"
+          render={props => <Friends {...props} friends={this.state.friends} />}
+        />
       </div>
     );
   }
