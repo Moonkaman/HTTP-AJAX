@@ -83,7 +83,8 @@
 .friend-info-cont {
   padding: 50px;
   background: white;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  border-right: 1px dashed lightgray;
   width: 50%;
 }
 
