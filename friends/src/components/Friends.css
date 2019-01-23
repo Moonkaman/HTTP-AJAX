@@ -77,5 +77,39 @@
 
 .friend-content {
   text-align: left;
+  display: flex;
+}
+
+.friend-info-cont {
   padding: 50px;
+  background: white;
+  margin-right: 10px;
+  width: 50%;
+}
+
+.friend-info-cont h2 {
+  margin-bottom: 20px;
+}
+
+.friend-info-cont h3 {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 5px;
+}
+
+.friend-posts-cont {
+  padding: 50px;
+  background: white;
+}
+
+.friend-posts-cont h2 {
+  margin-bottom: 20px;
+}
+
+.fake-post {
+  border-bottom: 1px dashed lightgray;
+  padding: 20px 0;
+}
+
+.fake-post.lastpost {
+  border-bottom: none;
 }
