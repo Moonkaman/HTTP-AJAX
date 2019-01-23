@@ -28,7 +28,12 @@ const Friend = props => {
           <h3>{friendData.email}</h3>
         </div>
         <div className="friend-posts-cont">
-          <h2>{friendData.name} Posts</h2>
+          <h2>
+            {friendData.name[friendData.name.length - 1] === "s"
+              ? friendData.name
+              : friendData.name + "s"}{" "}
+            Posts
+          </h2>
           <div className="posts-cont">
             {friendData.posts.length === 0 && (
               <h1 className="no-posts">{friendData.name} Has no posts</h1>
