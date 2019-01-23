@@ -5,9 +5,9 @@
 }
 
 .friends-list-cont h1 {
-  background: #2ecc71;
+  /* background: #2ecc71; */
   padding-bottom: 5px;
-  color: white;
+  color: #2ecc71;
   border-radius: 4px;
   margin-bottom: 10px;
 }
@@ -17,6 +17,7 @@
   text-decoration: none;
   margin-bottom: 10px;
   position: relative;
+  overflow: hidden;
 }
 
 .friend-card h2 {
@@ -27,5 +28,54 @@
   border-radius: 4px;
 }
 
-.friend-card hover-elem {
+.friend-card .hover-elem {
+  position: absolute;
+  bottom: 0px;
+  height: 5px;
+  width: 0%;
+  background: #2ecc71;
+  transition: width 0.5s ease;
+}
+
+.friend-card:hover .hover-elem {
+  width: 100%;
+}
+
+.friend-header {
+  padding: 100px 50px 40px 50px;
+  position: relative;
+  background: linear-gradient(
+    27deg,
+    rgba(0, 168, 197, 1) 0%,
+    rgba(255, 255, 126, 1) 100%
+  );
+  color: white;
+}
+
+.back-to-friends {
+  position: fixed;
+  text-decoration: none;
+  color: white;
+  top: 65px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.back-to-friends:hover {
+  text-decoration: underline;
+}
+
+.friend-header i {
+  font-size: 200px;
+  margin: 0px;
+}
+
+.friend-header h1 {
+  color: white;
+  font-size: 40px;
+}
+
+.friend-content {
+  text-align: left;
+  padding: 50px;
 }
