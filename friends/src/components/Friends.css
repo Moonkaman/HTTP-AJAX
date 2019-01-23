@@ -85,7 +85,6 @@
   background: white;
   /* margin-right: 10px; */
   border-right: 1px dashed lightgray;
-  width: 50%;
 }
 
 .friend-info-cont h2 {
@@ -100,17 +99,23 @@
 .friend-posts-cont {
   padding: 50px;
   background: white;
+  width: 100%;
 }
 
 .friend-posts-cont h2 {
   margin-bottom: 20px;
 }
 
-.fake-post {
+.post-cont {
   border-bottom: 1px dashed lightgray;
   padding: 20px 0;
 }
 
-.fake-post.lastpost {
+.post-cont.lastpost {
   border-bottom: none;
+}
+
+.no-posts {
+  color: lightgray;
+  text-align: center;
 }

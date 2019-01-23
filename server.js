@@ -17,7 +17,7 @@ let friends = [
     email: 'Jenkins@spongebob.com',
     posts: [
       {
-        title: "It's me guys, Ben... incase you didn't know",
+        title: "It's me guys, Old Man Jenkins",
         body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ducimus perferendis doloremque aliquid, fugit soluta atque dolores corrupti in. Quos quibusdam, ex nostrum similique officia iste temporibus deleniti eveniet dicta. Cum ut error eos aperiam voluptatibus repellat est repudiandae, ipsam placeat tenetur dignissimos sunt! Enim sapiente rerum, dignissimos possimus alias veniam fuga sit quibusdam itaque animi reprehenderit obcaecati quisquam adipisci dolorem velit maxime, nihil sint quaerat libero iste numquam! Labore, aliquam sapiente? Nam eos velit repudiandae necessitatibus expedita iusto quas ducimus vero suscipit commodi doloribus, voluptas explicabo dicta perferendis, aut nobis sunt libero unde blanditiis quis repellendus obcaecati. Unde, magnam.'
       },
       {
