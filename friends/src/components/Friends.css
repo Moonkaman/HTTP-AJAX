@@ -41,6 +41,22 @@
   width: 100%;
 }
 
+.friends-list-cont button {
+  background: none;
+  border: none;
+  padding: 10px;
+  background: #3498db;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.friends-list-cont button:hover {
+  background: #47abee;
+}
+
 .friend-header {
   padding: 100px 50px 40px 50px;
   position: relative;
@@ -138,6 +154,7 @@
   padding: 20px;
   border-radius: 4px;
   margin-top: 40vh;
+  position: relative;
 }
 
 .add-friend-cont h2 {
@@ -169,4 +186,12 @@
 
 .add-friend-cont button:hover {
   background: #49d884;
+}
+
+.add-friend-cont form i {
+  color: #e74c3c;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
 }

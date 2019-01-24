@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import FriendCard from "./FriendCard";
 
@@ -13,6 +14,11 @@ const Friends = props => {
           <FriendCard friendData={friend} key={friend.id} />
         ))}
       </div>
+      <Link to="/add-friend">
+        <button className="add-friend-btn">
+          Add New Friend <i className="fas fa-user-plus" />
+        </button>
+      </Link>
     </div>
   );
 };

@@ -39,15 +39,23 @@ class App extends Component {
 
   addFriend = e => {
     e.preventDefault();
-    axios
-      .post(`http://localhost:5000/friends`, this.state.newFriend)
-      .then(res => {
-        this.setState({
-          friends: res.data
-        });
-        this.props.history.push("/friends");
-      })
-      .catch(err => console.log(err));
+    if (
+      this.state.newFriend.name !== "" &&
+      this.state.newFriend.age !== "" &&
+      this.state.newFriend.email !== ""
+    ) {
+      axios
+        .post(`http://localhost:5000/friends`, this.state.newFriend)
+        .then(res => {
+          this.setState({
+            friends: res.data
+          });
+          this.props.history.push("/friends");
+        })
+        .catch(err => console.log(err));
+    } else {
+      alert("Please fill out all fields on the form");
+    }
   };
 
   render() {
@@ -65,7 +73,7 @@ class App extends Component {
           render={props => <Friend {...props} friends={this.state.friends} />}
         />
         <Route
-          path="/friends/add-friend"
+          path="/add-friend"
           render={props => {
             return (
               <>

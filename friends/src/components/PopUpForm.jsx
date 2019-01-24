@@ -1,9 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
 const PopUpForm = props => {
   return (
     <div className="add-friend-cont">
       <form onSubmit={props.addFriend}>
+        <Link to="/friends">
+          <i className="fas fa-times" />
+        </Link>
         <h2>Add a Friend</h2>
         <input
           name="name"
