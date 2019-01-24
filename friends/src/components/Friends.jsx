@@ -11,7 +11,11 @@ const Friends = props => {
       <h1>My Friends</h1>
       <div className="friend-cont">
         {props.friends.map(friend => (
-          <FriendCard friendData={friend} key={friend.id} />
+          <FriendCard
+            removeFriend={props.removeFriend}
+            friendData={friend}
+            key={friend.id}
+          />
         ))}
       </div>
       <Link to="/add-friend">

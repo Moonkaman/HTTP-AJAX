@@ -58,6 +58,18 @@ class App extends Component {
     }
   };
 
+  removeFriend = (e, id) => {
+    e.stopPropagation();
+    axios
+      .delete(`http://localhost:5000/friends/${id}`)
+      .then(res => {
+        this.setState({
+          friends: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
@@ -66,7 +78,13 @@ class App extends Component {
         <Route
           exact
           path="/friends"
-          render={props => <Friends {...props} friends={this.state.friends} />}
+          render={props => (
+            <Friends
+              {...props}
+              friends={this.state.friends}
+              removeFriend={this.removeFriend}
+            />
+          )}
         />
         <Route
           path="/friends/:friendId"
