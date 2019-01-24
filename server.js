@@ -102,7 +102,7 @@ let friends = [
     id: 6,
     name: 'Plankton',
     age: 47,
-    email: 'luis@lambdaschool.com',
+    email: 'Plankton@spongebob.com',
     posts: []
   },
 ];

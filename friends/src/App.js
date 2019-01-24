@@ -8,6 +8,7 @@ import Friends from "./components/Friends";
 import Home from "./components/Home";
 import Friend from "./components/Friend";
 import NavBar from "./components/NavBar";
+import AddFreindForm from "./components/AddFriendForm";
 
 class App extends Component {
   state = {
@@ -38,6 +39,17 @@ class App extends Component {
         <Route
           path="/friends/:friendId"
           render={props => <Friend {...props} friends={this.state.friends} />}
+        />
+        <Route
+          path="/friends/add-friend"
+          render={props => {
+            return (
+              <>
+                <Friends {...props} friends={this.state.friends} />
+                <AddFreindForm {...props} />
+              </>
+            );
+          }}
         />
       </div>
     );
