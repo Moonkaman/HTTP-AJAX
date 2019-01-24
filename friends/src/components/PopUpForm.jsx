@@ -3,7 +3,7 @@ import React from "react";
 const PopUpForm = props => {
   return (
     <div className="add-friend-cont">
-      <form action="">
+      <form onSubmit={props.addFriend}>
         <h2>Add a Friend</h2>
         <input
           name="name"

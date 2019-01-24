@@ -37,6 +37,19 @@ class App extends Component {
     });
   };
 
+  addFriend = e => {
+    e.preventDefault();
+    axios
+      .post(`http://localhost:5000/friends`, this.state.newFriend)
+      .then(res => {
+        this.setState({
+          friends: res.data
+        });
+        this.props.history.push("/friends");
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
@@ -61,6 +74,7 @@ class App extends Component {
                   {...props}
                   handleChange={this.handleChange}
                   newFriend={this.state.newFriend}
+                  addFriend={this.addFriend}
                 />
               </>
             );
