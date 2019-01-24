@@ -8,11 +8,16 @@ import Friends from "./components/Friends";
 import Home from "./components/Home";
 import Friend from "./components/Friend";
 import NavBar from "./components/NavBar";
-import AddFreindForm from "./components/AddFriendForm";
+import PopUpForm from "./components/PopUpForm";
 
 class App extends Component {
   state = {
-    friends: []
+    friends: [],
+    newFriend: {
+      name: "",
+      age: "",
+      email: ""
+    }
   };
 
   componentDidMount() {
@@ -25,6 +30,12 @@ class App extends Component {
       )
       .catch(err => console.log(err));
   }
+
+  handleChange = e => {
+    this.setState({
+      newFriend: { ...this.state.newFriend, [e.target.name]: e.target.value }
+    });
+  };
 
   render() {
     return (
@@ -46,7 +57,11 @@ class App extends Component {
             return (
               <>
                 <Friends {...props} friends={this.state.friends} />
-                <AddFreindForm {...props} />
+                <PopUpForm
+                  {...props}
+                  handleChange={this.handleChange}
+                  newFriend={this.state.newFriend}
+                />
               </>
             );
           }}
