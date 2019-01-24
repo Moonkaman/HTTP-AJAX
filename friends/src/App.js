@@ -9,11 +9,17 @@ import Home from "./components/Home";
 import Friend from "./components/Friend";
 import NavBar from "./components/NavBar";
 import PopUpForm from "./components/PopUpForm";
+import EditFriend from "./components/EditFriend";
 
 class App extends Component {
   state = {
     friends: [],
-    newFriend: {
+    aFriend: {
+      name: "",
+      age: "",
+      email: ""
+    },
+    editFriend: {
       name: "",
       age: "",
       email: ""
@@ -32,8 +38,9 @@ class App extends Component {
   }
 
   handleChange = e => {
+    console.log(e.target.value);
     this.setState({
-      newFriend: { ...this.state.newFriend, [e.target.name]: e.target.value }
+      aFriend: { ...this.state.aFriend, [e.target.name]: e.target.value }
     });
   };
 
@@ -105,6 +112,17 @@ class App extends Component {
               </>
             );
           }}
+        />
+        <Route
+          path="/edit-friend/:friendId"
+          render={props => (
+            <EditFriend
+              {...props}
+              friends={this.state.friends}
+              aFriend={this.state.aFriend}
+              handleChange={this.handleChange}
+            />
+          )}
         />
       </div>
     );

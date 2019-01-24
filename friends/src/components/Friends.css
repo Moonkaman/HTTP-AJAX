@@ -229,3 +229,18 @@
   right: 10px;
   font-size: 30px;
 }
+
+.input-label {
+  margin-bottom: 0px;
+}
+
+.name-input {
+  border: none;
+  background: none;
+  color: white;
+  border-bottom: 2px solid white;
+  display: block;
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+}

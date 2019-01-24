@@ -13,21 +13,21 @@ const PopUpForm = props => {
         <h2>Add a Friend</h2>
         <input
           name="name"
-          value={props.newFriend.name}
+          value={props.aFriend.name}
           placeholder="Friend's Name..."
           type="text"
           onChange={props.handleChange}
         />
         <input
           name="age"
-          value={props.newFriend.age}
+          value={props.aFriend.age}
           placeholder="Friend's Age..."
           type="number"
           onChange={props.handleChange}
         />
         <input
           name="email"
-          value={props.newFriend.email}
+          value={props.aFriend.email}
           placeholder="Friend's Email..."
           type="text"
           onChange={props.handleChange}
