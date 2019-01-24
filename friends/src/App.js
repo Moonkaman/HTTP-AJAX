@@ -18,11 +18,6 @@ class App extends Component {
       name: "",
       age: "",
       email: ""
-    },
-    editFriend: {
-      name: "",
-      age: "",
-      email: ""
     }
   };
 
@@ -38,7 +33,6 @@ class App extends Component {
   }
 
   handleChange = e => {
-    console.log(e.target.value);
     this.setState({
       aFriend: { ...this.state.aFriend, [e.target.name]: e.target.value }
     });
@@ -47,12 +41,12 @@ class App extends Component {
   addFriend = e => {
     e.preventDefault();
     if (
-      this.state.newFriend.name !== "" &&
-      this.state.newFriend.age !== "" &&
-      this.state.newFriend.email !== ""
+      this.state.aFriend.name !== "" &&
+      this.state.aFriend.age !== "" &&
+      this.state.aFriend.email !== ""
     ) {
       axios
-        .post(`http://localhost:5000/friends`, this.state.newFriend)
+        .post(`http://localhost:5000/friends`, this.state.aFriend)
         .then(res => {
           this.setState({
             friends: res.data
@@ -106,7 +100,7 @@ class App extends Component {
                 <PopUpForm
                   {...props}
                   handleChange={this.handleChange}
-                  newFriend={this.state.newFriend}
+                  aFriend={this.state.aFriend}
                   addFriend={this.addFriend}
                 />
               </>
