@@ -18,6 +18,12 @@ const Friend = props => {
         <Link to="/friends" className="back-to-friends">
           {"< Back to Friends"}
         </Link>
+        <p
+          onClick={_ => props.populateState(friendData.id)}
+          className="edit-page"
+        >
+          {"Edit Page"}
+        </p>
         <i className="fas fa-user-circle" />
         <h1>{friendData.name}</h1>
       </div>

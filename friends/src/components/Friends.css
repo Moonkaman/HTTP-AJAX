@@ -109,9 +109,46 @@
   top: 65px;
   left: 10px;
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.246);
+  padding: 3px 6px 6px 6px;
+  border-radius: 4px;
 }
 
 .back-to-friends:hover {
+  text-decoration: underline;
+}
+
+.edit-page {
+  position: fixed;
+  text-decoration: none;
+  color: white;
+  top: 65px;
+  right: 10px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.246);
+  padding: 3px 6px 6px 6px;
+  border-radius: 4px;
+  margin-top: 0px;
+}
+
+.edit-page:hover {
+  text-decoration: underline;
+}
+
+.save-changes {
+  position: fixed;
+  text-decoration: none;
+  color: white;
+  top: 65px;
+  right: 10px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.246);
+  padding: 3px 6px 6px 6px;
+  border-radius: 4px;
+  margin-top: 0px;
+}
+
+.save-changes:hover {
   text-decoration: underline;
 }
 

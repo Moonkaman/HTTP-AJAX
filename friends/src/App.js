@@ -71,6 +71,33 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  populateState = id => {
+    const friendData = this.state.friends.find(
+      friend => String(friend.id) === String(id)
+    );
+
+    this.setState({
+      aFriend: friendData
+    });
+
+    this.props.history.push(`/edit-friend/${id}`);
+  };
+
+  updateFriend = _ => {
+    axios
+      .put(
+        `http://localhost:5000/friends/${this.state.aFriend.id}`,
+        this.state.aFriend
+      )
+      .then(res => {
+        this.setState({
+          friends: res.data
+        });
+        this.props.history.push(`/friends/${this.state.aFriend.id}`);
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
@@ -89,7 +116,13 @@ class App extends Component {
         />
         <Route
           path="/friends/:friendId"
-          render={props => <Friend {...props} friends={this.state.friends} />}
+          render={props => (
+            <Friend
+              {...props}
+              friends={this.state.friends}
+              populateState={this.populateState}
+            />
+          )}
         />
         <Route
           path="/add-friend"
@@ -115,6 +148,7 @@ class App extends Component {
               friends={this.state.friends}
               aFriend={this.state.aFriend}
               handleChange={this.handleChange}
+              updateFriend={this.updateFriend}
             />
           )}
         />

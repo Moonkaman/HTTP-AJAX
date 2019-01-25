@@ -11,30 +11,43 @@ const EditFriend = props => {
   );
 
   if (friendData === undefined) return <h1>Friend Not Found</h1>;
-  console.log(props);
 
   return (
     <form action="">
       <div className="friend-cont">
         <div className="friend-header">
-          <Link to="/friends" className="back-to-friends">
+          <Link to={`/friends/${friendData.id}`} className="back-to-friends">
             {"< Back to Profile"}
           </Link>
+          <p onClick={props.updateFriend} className="save-changes">
+            Save Changes
+          </p>
           <i className="fas fa-user-circle" />
           <input
             name="name"
             className="name-input"
             type="text"
             onChange={props.handleChange}
+            value={props.aFriend.name}
           />
         </div>
         <div className="friend-content">
           <div className="friend-info-cont">
             <h2>About {props.aFriend.name}</h2>
             <p className="input-label">Age</p>
-            <input type="number" name="age" onChange={props.handleChange} />
+            <input
+              type="number"
+              name="age"
+              onChange={props.handleChange}
+              value={props.aFriend.age}
+            />
             <p className="input-label">Email</p>
-            <input type="text" name="email" onChange={props.handleChange} />
+            <input
+              type="text"
+              name="email"
+              onChange={props.handleChange}
+              value={props.aFriend.email}
+            />
           </div>
           <div className="friend-posts-cont">
             <h2>
